@@ -1,0 +1,26 @@
+group 'jiang'
+version '1.2'
+ext.artifactId = "dubbo-interface"
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+}
+uploadArchives {
+    repositories {
+        ivy {
+            credentials {
+                username "admin"
+                password "admin123"
+            }
+            url "http://localhost:8081/repository/yangai/"
+        }
+    }
+}
